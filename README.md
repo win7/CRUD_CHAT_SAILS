@@ -29,7 +29,7 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 
 ## GO CRUD ##
 1. Crear proyecto:
-	sails new Diary
+> sails new Diary
 2. Entrar dentro del project:
 	cd
 3. Configurar adaptador de BD
