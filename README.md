@@ -32,12 +32,12 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 	sails new Diary
 2. Entrar dentro del project:
 	cd
-3. Configurar adaptador de BD:
+3. Configurar adaptador de BD
 	Installar adaptador
-		+ mysql: npm install sails-mysql --save
-		+ postgresql: npm install postgres-mysql --save
-		+ sqlserver:
-		+ mongodb: npm install sails-mongo --save
+	+ mysql: npm install sails-mysql --save
+	+ postgresql: npm install postgres-mysql --save
+	+ sqlserver:
+	+ mongodb: npm install sails-mongo --save
   Referenciar DB (in config/datastores.js)
     - adapter: 'sails-mysql',
     - url: 'mysql://user:password@host:port/database',
