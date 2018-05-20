@@ -26,56 +26,60 @@ This project's boilerplate is based on an expanded seed app provided by the [Sai
 <!--
 Note:  Generators are usually run using the globally-installed `sails` CLI (command-line interface).  This CLI version is _environment-specific_ rather than app-specific, thus over time, as a project's dependencies are upgraded or the project is worked on by different developers on different computers using different versions of Node.js, the Sails dependency in its package.json file may differ from the globally-installed Sails CLI release it was originally generated with.  (Be sure to always check out the relevant [upgrading guides](https://sailsjs.com/upgrading) before upgrading the version of Sails used by your app.  If you're stuck, [get help here](https://sailsjs.com/support).)
 -->
+## After download run ##
+1. Run:
+> npm install
+2. Config db:
+- In /config/datastore.js
 
 ## GO CRUD ##
-1. Crear proyecto:
+1. Create project:
 > sails new Diary
-2. Entrar dentro del project:
-	cd
-3. Configurar adaptador de BD
-	Installar adaptador
-	+ mysql: npm install sails-mysql --save
-	+ postgresql: npm install postgres-mysql --save
-	+ sqlserver:
-	+ mongodb: npm install sails-mongo --save
-  Referenciar DB (in config/datastores.js)
-    - adapter: 'sails-mysql',
-    - url: 'mysql://user:password@host:port/database',
-    or
-    - adapter: 'sails-postgresql',
-    - url: 'postgresql://user:password@127.0.0.1:5432/database
-
-4. Crear modelos y controladore
-	sails generate api Contact
-5. Editar los modelos
-
-6. Editar los controladores
-7. Crear Vistas
-  Crear una carpeta para las vistas de contacto
-  Crear archivos .ejs
-    find_all.ejs
-    new.ejs
-    update.ejs
-  Editar layouts/layoout.ejs
-    Agregar las pestañas para agregar y listar contactos
-8. Crear rutas
-  En config/routes.js
-9. Ejecuar
-  sails lift
+2. Into project:
+> cd (into to project)
+3. Config adapter db:
+Install adapter
+- mysql: npm install sails-mysql --save
+- postgresql: npm install postgres-mysql --save
+- sqlserver:
+- mongodb: npm install sails-mongo --save
+Reference to DB (in config/datastores.js)
+- adapter: 'sails-mysql',
+- url: 'mysql://user:password@host:port/database',
+or
+- adapter: 'sails-postgresql',
+- url: 'postgresql://user:password@127.0.0.1:5432/database
+4. Create model and controller:
+> sails generate api Contact
+5. Edit model:
+6. Edit controller:
+7. Create views:
+Create folder Contact
+Into folder contact, create files .ejs
+- find_all.ejs
+- new.ejs
+- update.ejs
+Edit layouts/layoout.ejs
+- Add item for item create and list Contacts
+8. Create routes in:
+config/routes.js
+9. Run server:
+> sails lift
 
 ## GO CHAT ##
-1. Crear controlador
-    sails generate controller Chat
-2. Editar los controladores
+1. Create controller:
+> sails generate controller Chat
+2. Edit controller:
     ...
-3. Crear Vistas
-  Crear carpeta views/chat
-    Crear archivos chat_room.ejs
-  Editar layouts/layout.ejs
-    Agregar las pestañas para UI de chat
-4. Crear rutas
-  En config/routes.js
-5. Ejecuar
-  sails lift
+3. Create views:
+Create folder chat
+Into folder chat, create files .ejs
+- chat_room.ejs
+Edit layouts/layoout.ejs
+- Add item for chat
+4. Create routes in:
+config/routes.js
+5. Run server
+> sails lift
 
 # CRUD_CHAT_SAILS
