@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="text-center"> <%= title %> </h4>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th> First Name </th>
+              <th> Last Name </th>
+              <th> Phone </th>
+              <th> Address </th>
+              <th> Email </th>
+              <th> Acción </th>
+            </tr>
+          </thead>
+          <tbody>
+              <% for(var i = 0; i < contact.length; i++) {
+                  var item = contact[i];
+              %>
+              <tr>
+                <!-- <td><a href="/find_one/<%= item.id %>"> <%= item.id %> </a></td> -->
+                <td> <%= item.first_name %> </td>
+                <td> <%= item.last_name %> </td>
+                <td> <%= item.phone %> </td>
+                <td> <%= item.address %> </td>
+                <td> <%= item.email %> </td>
+                <td>
+                  <a href="/find_one_contact/<%= item.id %>">Update</a>
+                  /
+                  <a href="/delete_contact/<%= item.id %>">Remove</a>
+                </td>
+              </tr>
+              <% } %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

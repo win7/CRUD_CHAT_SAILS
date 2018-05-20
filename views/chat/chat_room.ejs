@@ -1,0 +1,56 @@
+<!--STYLES-->
+<link rel="stylesheet" href="/dependencies/bootstrap-4/bootstrap-4.css">
+<link rel="stylesheet" href="/styles/importer.css">
+<!--STYLES END-->
+<style>
+  #messages { list-style-type: none; margin: 0; padding: 0; }
+  #messages li { padding: 5px 10px; }
+  #messages li:nth-child(odd) { background: #eee; }
+  #messages { margin-bottom: 40px }
+  #panel {
+    background: #ccc none repeat scroll 0 0;
+    border: 3px solid #666;
+    border-radius: 3px;
+    position: relative;
+    height: 350px;
+    overflow: auto;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h4 class="text-center"> Chat Sails </h4>
+      <h3 class="text-center"> <%= title %> </h3>
+      
+      <div id="panel" class="panel">
+        <ul id="messages"></ul>  
+      </div> 
+      <form action="">
+        <div class="input-group mb-3">
+          <input id="message" autocomplete="off" type="text" class="form-control" placeholder="message">
+          <div class="input-group-append">
+            <button class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/dependencies/sails.io.js"></script>
+<script src="/dependencies/jquery.min.js"></script>
+<script>
+  $(function () {
+    $('form').submit(function(){
+      io.socket.get("/send_message", {message: $('#message').val()});
+      $('#message').val('');
+      return false;
+    });
+    io.socket.on('receive_message', function(data){
+      console.log("Receive message" + JSON.stringify(data));
+      $('#messages').append($('<li>').text(data.name + ": " + data.message));
+      $( "#panel" ).scrollTop(document.getElementById("panel").scrollHeight);
+    });
+  });
+</script>
